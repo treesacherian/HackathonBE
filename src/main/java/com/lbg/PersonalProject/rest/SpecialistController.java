@@ -17,17 +17,17 @@ import com.lbg.PersonalProject.domain.Specialist;
 import com.lbg.PersonalProject.service.SpecialistService;
 
 @CrossOrigin
-@RequestMapping("/specialist")
+@RequestMapping("/booking")
 @RestController
 public class SpecialistController {
-	
+
 	private SpecialistService service;
-	
+
 	public SpecialistController(SpecialistService service) {
 		super();
 		this.service = service;
 	}
-	
+
 	@PostMapping("/create")
 	public ResponseEntity<Specialist> createSpecialist(@RequestBody Specialist newSpecialist) {
 
@@ -38,17 +38,17 @@ public class SpecialistController {
 	public boolean deleteSpecialist(@PathVariable int id) {
 		return this.service.deleteSpecialist(id);
 	}
-	
+
 	@GetMapping("/get")
 	public List<Specialist> getSpecialist() {
 		return this.service.getSpecialist();
 	}
-	
+
 	@GetMapping("/get/{id}")
 	public ResponseEntity<Specialist> getSpecialist(@PathVariable int id) {
 		return this.service.getSpecialist(id);
 	}
-	
+
 	@PatchMapping("/update/{id}")
 	public ResponseEntity<Specialist> updateSpecialist(@PathVariable int id, @RequestBody Specialist newSpecialist) {
 
