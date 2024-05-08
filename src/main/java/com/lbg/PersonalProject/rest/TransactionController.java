@@ -16,7 +16,7 @@ import com.lbg.PersonalProject.domain.Transaction;
 import com.lbg.PersonalProject.service.TransactionService;
 
 @CrossOrigin
-@RequestMapping("/statement")
+@RequestMapping("/transaction")
 @RestController
 public class TransactionController {
 	
